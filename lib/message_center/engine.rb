@@ -17,17 +17,6 @@ module MessageCenter
     # this function maps the vars from your app into your engine
     def self.setup(&block)
         yield self
-        puts "user class is : "
-        puts self.user_class
-        puts %Q(
-            #############################################
-            #############################################
-            ### configuration defaults are found in:  ###
-            ### /config/initializer/message_center.rb ###
-            #############################################
-            #############################################
-            
-        )
     end
 
 end

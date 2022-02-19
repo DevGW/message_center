@@ -3,7 +3,7 @@ module MessageCenter
     end
 
     #############################################
-    ### Konfiguration defaults are found in:  ###
+    ### Configuration defaults are found in:  ###
     ### /config/initializer/message_center.rb ###
     #############################################
 

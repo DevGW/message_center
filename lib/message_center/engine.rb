@@ -21,11 +21,14 @@ module MessageCenter
         yield self
 
         ### mv initializer file over
-        puts "\n copying message_center.rb to /config/initializers\n"
         source = File.join(MessageCenter::Engine.root, "config", "initializers", "message_center.rb")
         target = File.join(Rails.root, "config", "initializers", "message_center.rb")
-        FileUtils.cp_r source, target
-
+        if !File.exists?(target)
+            puts "\n copying message_center.rb to /config/initializers\n"
+            FileUtils.cp_r source, target
+        else
+            puts "\n initializer already exists"
+        end
     
     end
 

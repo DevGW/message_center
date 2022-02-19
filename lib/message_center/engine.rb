@@ -16,21 +16,16 @@ module MessageCenter
     self.mattr_accessor :table_data_prefix
     self.table_data_prefix = "dgw_mc_"
 
+    # this function maps the vars from your app into your engine
+    def self.setup(&block)
+        yield self
 
         ### mv initializer file over
         source = File.join(MessageCenter::Engine.root, "config", "initializers", "message_center.rb")
         target = File.join(Rails.root, "config", "initializers", "message_center.rb")
         if !File.exists?(target)
-            puts "\n copying message_center.rb to /config/initializers\n"
             FileUtils.cp_r source, target
-        else
-            puts "\n initializer already exists"
         end
-    
-    # this function maps the vars from your app into your engine
-    def self.setup(&block)
-        yield self
-
     
     end
 

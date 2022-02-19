@@ -19,6 +19,14 @@ module MessageCenter
     # this function maps the vars from your app into your engine
     def self.setup(&block)
         yield self
+
+        ### mv initializer file over
+        puts "\n copying message_center.rb to /config/initializers\n"
+        source = File.join(MessageCenter::Engine.root, "config", "initializers", "message_center.rb")
+        target = File.join(Rails.root, "config", "initializers", "message_center.rb")
+        FileUtils.cp_r source, target
+
+    
     end
 
 end

@@ -18,7 +18,7 @@ module MessageCenter
     def self.setup(&block)
         yield self
 
-        puts %{
+        puts %Q(
             #############################################
             #############################################
             ### configuration defaults are found in:  ###
@@ -26,7 +26,7 @@ module MessageCenter
             #############################################
             #############################################
             
-        }
+        )
     end
 
 end

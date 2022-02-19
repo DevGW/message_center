@@ -21,7 +21,7 @@ module MessageCenter
         yield self
 
         puts "user class is : "
-        puts config.user_class
+        puts self.user_class
         puts %Q(
             #############################################
             #############################################
